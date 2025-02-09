@@ -50,7 +50,7 @@ public class Word {
                 newOutputWord += outputWord.charAt(i);
             }
         }
-        this.outputWord = newOutputWord;
+        this.outputWord =  newOutputWord;
 
     }
 

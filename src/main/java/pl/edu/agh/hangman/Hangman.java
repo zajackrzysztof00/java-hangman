@@ -64,6 +64,6 @@ public class Hangman {
         System.out.println(out);
         boolean k = w.checkIfLetterInWord('e');
         System.out.println(w.getWord());
-        System.out.println(out);
+        System.out.println(w.getOutputWord());
     }
 }
