@@ -15,23 +15,26 @@ public class Main {
 
         InputFrom inputFrom = new InputFrom();
         Hangman hangman = new Hangman();
-        char letter =  inputFrom.wprowadzLitere();
 
+        String w = word.getWord();
+        System.out.println(word.getWord());
         while (hangman.getAlive()){
-            letter = inputFrom.wprowadzLitere();
+            char letter = inputFrom.wprowadzLitere();
             boolean result = word.checkIfLetterInWord(letter);
             if(result){
                 System.out.println(word.getOutputWord());
                 hangman.drawHangman();
+                if (w.equals(word.getOutputWord())){
+                    break;
+                }
             } else {
+                System.out.println(word.getOutputWord());
                 hangman.moveByOne();
                 hangman.drawHangman();
             }
         }
-
-       word.checkIfLetterInWord(letter);
-       System.out.println(word.getWord());
-       System.out.println(word.getOutputWord());
+        Result gameResult = new Result();
+        gameResult.wyswietlWynik(hangman.getAlive());
     }
 }
 
