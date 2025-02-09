@@ -22,6 +22,7 @@ public class Word {
             Scanner myReader = new Scanner(myObj);
             while (myReader.hasNextLine()) {
                 String data = myReader.nextLine();
+                data = data.toLowerCase();
                 words.add(data);
             }
             myReader.close();

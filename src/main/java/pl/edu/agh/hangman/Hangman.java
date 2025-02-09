@@ -69,6 +69,9 @@ public class Hangman {
         // jezeli false kolejny krok
         // jezeli false i wyjatek to exeption
 
+        Word w = new Word();
+        w.loadTxtFile();
+
 
         String word = "JAVA";
         char targetChar = 'A';
