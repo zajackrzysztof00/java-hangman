@@ -58,6 +58,7 @@ public class Hangman {
                     "========"
     };
 
+    int position = 0;
     Boolean alive = true;
 
     public void setAlive(Boolean alive) {
@@ -68,51 +69,15 @@ public class Hangman {
         return alive;
     }
 
-    public void moveByOne(){
-
-    }
-    public static void drawHangman(){
-        // pamietac na jakim jest znaku
-        // zwracac albo krok animacji -
-        // jezeli true to zwraca ostani
-        // jezeli false kolejny krok
-        // jezeli false i wyjatek to exeption
-
-        Word someword = new Word();
-        someword.pickWord();
-//       Boolean targetChar = someword.checkIfLetterInWord();
-
-
-//        String word = "JAVA";
-//        char targetChar = 'A';
-        int count = 0;
-
-        // Iteracja przez znaki w słowie
-        for (int i = 0; i < word.length(); i++) {
-            if (word.charAt(i) == targetChar) {
-                List<String> words = Collections.singletonList(HANGMANPICS[0]);
-
-                System.out.println(words.toString());
-            }else {
-                List<String> words = Collections.singletonList(HANGMANPICS[i]);
-                System.out.println(words.toString());
-                count++;
-            }
+    public void moveByOne() {
+        this.position++;
+        if (this.position == HANGMANPICS.length-1) {
+            this.alive = false;
         }
     }
 
-    public static void main(String[] args) {
-
-
-
-
-        }
-
-
-
-
-
-
-
-
+    public void drawHangman() {
+        List<String> words = Collections.singletonList(HANGMANPICS[this.position]);
+        System.out.println(words.toString());
+    }
 }

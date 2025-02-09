@@ -15,21 +15,19 @@ public class Main {
 
         InputFrom inputFrom = new InputFrom();
         Hangman hangman = new Hangman();
+        char letter =  inputFrom.wprowadzLitere();
 
-       char letter =  inputFrom.wprowadzLitere();
-
-       while (hangman.getAlive()){
-           letter = inputFrom.wprowadzLitere();
-           boolean result =  word.checkIfLetterInWord(letter);
-
-           if(result){
-               word.getOutputWord();
-           }
-       }
-
-       hangman.moveByOne();
-
-
+        while (hangman.getAlive()){
+            letter = inputFrom.wprowadzLitere();
+            boolean result = word.checkIfLetterInWord(letter);
+            if(result){
+                System.out.println(word.getOutputWord());
+                hangman.drawHangman();
+            } else {
+                hangman.moveByOne();
+                hangman.drawHangman();
+            }
+        }
 
        word.checkIfLetterInWord(letter);
        System.out.println(word.getWord());
