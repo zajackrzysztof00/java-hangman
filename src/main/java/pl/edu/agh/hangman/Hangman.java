@@ -60,6 +60,11 @@ public class Hangman {
 
 
 
+    public void moveByOne(){
+        
+    }
+
+    public static void drawHangman(){}
 
     public static void main(String[] args) {
 
@@ -69,12 +74,13 @@ public class Hangman {
         // jezeli false kolejny krok
         // jezeli false i wyjatek to exeption
 
-        Word w = new Word();
-        w.loadTxtFile();
+        Word someword = new Word();
+         someword.pickWord();
+//       Boolean targetChar = someword.checkIfLetterInWord();
 
 
-        String word = "JAVA";
-        char targetChar = 'A';
+//        String word = "JAVA";
+//        char targetChar = 'A';
         int count = 0;
 
         // Iteracja przez znaki w słowie
@@ -89,9 +95,6 @@ public class Hangman {
                 count++;
             }
         }
-
-
-
 
 
         }

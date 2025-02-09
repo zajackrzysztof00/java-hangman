@@ -11,13 +11,14 @@ public class InputFrom {
 //        System.out.println(letter);
 //    }
 
+    Scanner scanner = new Scanner(System.in);
 
     //funkcja zwracajaca wpisana litere przez uzytkownika
-    public static char wprowadzLitere(Scanner scanner) {
+    public  char wprowadzLitere() {
         char letter = ' ';
         while (true) {
             System.out.print("Guess a letter: ");
-            String input = scanner.nextLine();
+            String input = this.scanner.nextLine();
             if (input.length() == 1 && Character.isLetter(input.charAt(0))) {
                 letter = input.charAt(0);
                 break;
