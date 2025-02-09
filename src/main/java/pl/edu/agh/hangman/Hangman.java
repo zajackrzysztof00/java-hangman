@@ -56,5 +56,14 @@ public class Hangman {
 
     public static void main(String[] args) {
 
+        Word w = new Word();
+        w.loadTxtFile();
+        w.pickWord();
+        String out = w.getOutputWord();
+        System.out.println(w.getWord());
+        System.out.println(out);
+        boolean k = w.checkIfLetterInWord('e');
+        System.out.println(w.getWord());
+        System.out.println(out);
     }
 }
