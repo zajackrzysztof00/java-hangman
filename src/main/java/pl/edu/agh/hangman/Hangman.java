@@ -58,16 +58,20 @@ public class Hangman {
                     "========"
     };
 
+    Boolean alive = true;
 
-
-    public void moveByOne(){
-        
+    public void setAlive(Boolean alive) {
+        this.alive = alive;
     }
 
-    public static void drawHangman(){}
+    public Boolean getAlive() {
+        return alive;
+    }
 
-    public static void main(String[] args) {
+    public void moveByOne(){
 
+    }
+    public static void drawHangman(){
         // pamietac na jakim jest znaku
         // zwracac albo krok animacji -
         // jezeli true to zwraca ostani
@@ -75,7 +79,7 @@ public class Hangman {
         // jezeli false i wyjatek to exeption
 
         Word someword = new Word();
-         someword.pickWord();
+        someword.pickWord();
 //       Boolean targetChar = someword.checkIfLetterInWord();
 
 
@@ -95,6 +99,11 @@ public class Hangman {
                 count++;
             }
         }
+    }
+
+    public static void main(String[] args) {
+
+
 
 
         }

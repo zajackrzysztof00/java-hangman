@@ -14,8 +14,20 @@ public class Main {
         word.pickWord();
 
         InputFrom inputFrom = new InputFrom();
+        Hangman hangman = new Hangman();
 
        char letter =  inputFrom.wprowadzLitere();
+
+       while (hangman.getAlive()){
+           letter = inputFrom.wprowadzLitere();
+           boolean result =  word.checkIfLetterInWord(letter);
+
+           if(result){
+               word.getOutputWord();
+           }
+       }
+
+       hangman.moveByOne();
 
 
 
