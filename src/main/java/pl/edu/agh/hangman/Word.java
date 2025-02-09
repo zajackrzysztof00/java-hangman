@@ -13,23 +13,10 @@ public class Word {
     private String outputWord;
 
     public Word() {
-        loadTxtFile();
+        load();
     }
 
-    public void loadTxtFile(){
-        try {
-            File myObj = new File("src/main/resources/slowa.txt");
-            Scanner myReader = new Scanner(myObj);
-            while (myReader.hasNextLine()) {
-                String data = myReader.nextLine();
-                data = data.toLowerCase();
-                words.add(data);
-            }
-            myReader.close();
-        } catch (FileNotFoundException e) {
-            System.out.println("An error occurred.");
-            e.printStackTrace();
-        }
+    public void load(){
     }
 
     public void pickWord(){

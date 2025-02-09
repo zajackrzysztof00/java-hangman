@@ -10,7 +10,7 @@ public class Main {
     }
 
     public static void GameRun(){
-        Word word = new Word();
+        Word word = new WordTextFile("src/main/resources/slowa.txt");
         word.pickWord();
 
         InputFrom inputFrom = new InputFrom();
